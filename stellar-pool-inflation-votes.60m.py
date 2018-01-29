@@ -17,12 +17,12 @@ import subprocess
 lumenaut_infl_addr = "GCCD6AJOYZCUAQLX32ZJF2MKFFAUJ53PVCFQI3RHWKL3V47QYE2BNAUT"
 lumenaut_logo = "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"
 xlmpool_infl_addr = "GA3FUYFOPWZ25YXTCA73RK2UGONHCO27OHQRSGV3VCE67UEPEFEDCOPA"
+sdf_infl_addr = "GDWNY2POLGK65VVKIH5KQSH7VWLKRTQ5M6ADLJAYC2UEHEBEARCZJWWI"
 
 
 class StellarPool:
-    def __init__(self, title, infl_addr, notification=False, icon=None):
+    def __init__(self, title, infl_addr, icon=None):
         self.infl_addr    = infl_addr
-        self.notification = notification
         self.title        = title
         self.icon         = icon
         self.accounts     = 0
@@ -38,8 +38,7 @@ class StellarPool:
         print "{:,} votes".format(self.votes)
 
     def notify(self):
-        if self.notification:
-            subprocess.Popen("./usr/local/bin/terminal-notifier -title '{}' -subtitle '{:,} voters' -message '{:,} votes'".format(self.title, self.accounts, self.votes), shell=True)
+        subprocess.Popen("./usr/local/bin/terminal-notifier -title '{}' -subtitle '{:,} voters' -message '{:,} votes'".format(self.title, self.accounts, self.votes), shell=True)
 
     def get_inflation_votes(self):
         for voter in self.entries:
@@ -59,17 +58,22 @@ def main(argv):
     print "---"
     
     # Lumenaut part
-    lumenaut = StellarPool("Lumenaut", lumenaut_infl_addr, True, lumenaut_logo)
+    lumenaut = StellarPool("Lumenaut", lumenaut_infl_addr, lumenaut_logo)
     lumenaut.render()
 
     print "---"
 
     # XLMPool part
-    xlmPool = StellarPool("XLMPool", xlmpool_infl_addr)
+    xlmPool = StellarPool("XLM Pool", xlmpool_infl_addr)
     xlmPool.render()
 
+    print "---"
+    
+    # SDF part
+    sdfPool = StellarPool("SDF", sdf_infl_addr)
+    sdfPool.render()
+
     lumenaut.notify()
-    xlmPool.notify()
 
 if __name__ == "__main__":
   main(sys.argv[1:])
